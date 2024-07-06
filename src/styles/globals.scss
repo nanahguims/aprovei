@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.default-container {
+  @include containerConfig();
+}
+
+.h3-title {
+  padding: 20px 0;
+  @include titleConfig($color: $secondary-color);
+}
+
+.h4-title {
+  @include titleConfig($font-size: 28px);
+}
+
+.subtitle {
+  @include textConfig();
+  margin: 10px 0;
+}
+
+.paragraph-text {
+  @include textConfig();
+}
+
+.default-button {
+  @include primaryButton();
+}

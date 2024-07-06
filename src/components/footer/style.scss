@@ -1,33 +1,26 @@
-footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-}
-
 .footer {
-    &-container {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: $white01;
-        padding: 20px;
-        gap: 20px;
-    }
-    &-links {
-        &-01,
-        &-02 {
-            display: flex;
-            gap: 20px;
-        }
-    }
-    &-credits {
-        gap: 20px;
-    }
-}
+  &-container {
+    width: 100%;
+    @include flexLayout($justify-content: space-between);
+    background: $secondary-color;
+    padding: $padding;
+    gap: $gap;
 
-@media (max-width: 1024px) {
-    .footer-container {
-        flex-direction: column;
+    @include breakpoint($tablet-lg, max) {
+      flex-direction: column;
     }
+    .paragraph-text {
+      @include textConfig($color: $white);
+    }
+  }
+  &-links {
+    &-01,
+    &-02 {
+      @include flexLayout();
+      gap: $gap;
+    }
+  }
+  &-credits {
+    gap: $gap;
+  }
 }

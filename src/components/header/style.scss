@@ -1,0 +1,36 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  &-container {
+    background: $primary-color;
+    padding: $padding;
+    width: 100%;
+    @include flexLayout($justify-content: space-between);
+
+    @include breakpoint($tablet-lg, min) {
+      gap: $gap;
+    }
+
+    @include breakpoint($tablet-lg, max) {
+      flex-direction: column;
+      padding-bottom: 10px;
+    }
+  }
+  &-logo {
+    max-width: 300px;
+  }
+  &-menu {
+    @include flexLayout();
+    gap: $gap;
+    @include titleConfig($color: $secondary-color, $font-size: 24px);
+  }
+  &-credits {
+    gap: $gap;
+  }
+}

@@ -1,5 +1,106 @@
-$primary-color: #2b124c;
-$secondary-color: #522b5b;
-$purple: #854f6c;
-$white: #fbe4d8;
-$white01: #dfb6b2;
+// Colors
+$primary-color: #fffabd;
+$secondary-color: #a65e65;
+$green: #9ca651;
+$purple: #d9b19a;
+$gray: #e5e1d7;
+$white: #ffff;
+$black: #3f3346;
+
+// font-weight
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+
+$gap: 20px;
+$gap-md: 40px;
+$padding: 20px;
+$padding-md: 40px;
+
+// Breakpoints
+$mobile-xs: 320px;
+$mobile-sm: 480px;
+$mobile-md: 610px;
+$tablet-sm: 768px;
+$tablet-md: 900px;
+$tablet-lg: 1024px;
+$laptop-sm: 1280px;
+$laptop-md: 1366px;
+$laptop-lg: 1440px;
+$desktop-sm: 1600px;
+$desktop-md: 1920px;
+$desktop-lg: 2560px;
+$ultrawide: 3440px;
+
+@mixin breakpoint($width, $type: min) {
+  @if $type == min {
+    @media (min-width: $width) {
+      @content;
+    }
+  } @else if $type == max {
+    @media (max-width: $width) {
+      @content;
+    }
+  }
+}
+
+@mixin sizeConfig($width: auto, $height: auto) {
+  width: $width;
+  height: $height;
+}
+
+@mixin textConfig(
+  $font-size: 20px,
+  $font-weight: $font-medium,
+  $text-align: left,
+  $color: $black
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+  text-align: $text-align;
+}
+
+@mixin titleConfig($font-size: 32px, $text-align: center, $color: $black) {
+  font-size: $font-size;
+  text-align: $text-align;
+  font-weight: $font-semibold;
+  color: $color;
+}
+
+@mixin primaryButton($max-width: 200px) {
+  background: $primary-color;
+  @include sizeConfig(100%, 45px);
+  border-radius: 30px;
+  max-width: $max-width;
+  color: $white;
+
+  @include textConfig($color: $white, $font-size: 18px, $text-align: center);
+}
+
+@mixin containerConfig(
+  $max-width: 1252px,
+  $padding-bottom: 40px,
+  $border-bottom: 1px solid $gray
+) {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding-bottom: $padding-bottom;
+  border-bottom: $border-bottom;
+}
+
+@mixin flexLayout(
+  $display: flex,
+  $flex-direction: row,
+  $justify-content: left,
+  $align-items: center,
+  $flex-wrap: nowrap
+) {
+  display: $display;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-wrap: $flex-wrap;
+}
