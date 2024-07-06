@@ -28,7 +28,7 @@ header {
   &-menu {
     @include flexLayout();
     gap: $gap;
-    @include titleConfig($color: $secondary-color, $font-size: 24px);
+    @include titleConfig($color: $secondary-color, $font-size: 20px);
   }
   &-credits {
     gap: $gap;

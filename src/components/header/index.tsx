@@ -5,16 +5,13 @@ import "./style.scss";
 
 const Header = () => {
   const router = useRouter();
-  const [lastUser, setLastUser] = useState<string>("");
+  const [loginUser, setloginUser] = useState<string>("");
 
   useEffect(() => {
-    const storedUsers = localStorage.getItem("users");
+    const storedUsers = localStorage.getItem("loggedInUser");
     if (storedUsers) {
       const users = JSON.parse(storedUsers);
-      if (users.length > 0) {
-        const latestUser = users[users.length - 1];
-        setLastUser(latestUser.username);
-      }
+      setloginUser(users.username);
     }
   }, []);
 
@@ -30,11 +27,8 @@ const Header = () => {
           </div>
 
           <div className="header-menu">
-            {!lastUser ? <p>Usuário não logado</p> : <p>Olá, {lastUser}</p>}
-            <button onClick={navigateToRegister}>
-              {" "}
-              Voltar para tela de login{" "}
-            </button>
+            {!loginUser ? <p>Usuário não logado</p> : <p>Olá, {loginUser}</p>}
+            <button onClick={navigateToRegister}> Voltar o login </button>
           </div>
         </div>
       </header>
