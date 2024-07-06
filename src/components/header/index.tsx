@@ -1,7 +1,26 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import "./style.scss";
 
-export function Header() {
+const Header = () => {
+  const router = useRouter();
+  const [lastUser, setLastUser] = useState<string>("");
+
+  useEffect(() => {
+    const storedUsers = localStorage.getItem("users");
+    if (storedUsers) {
+      const users = JSON.parse(storedUsers);
+      if (users.length > 0) {
+        const latestUser = users[users.length - 1];
+        setLastUser(latestUser.username);
+      }
+    }
+  }, []);
+
+  const navigateToRegister = () => {
+    router.push("/register");
+  };
   return (
     <>
       <header>
@@ -11,11 +30,15 @@ export function Header() {
           </div>
 
           <div className="header-menu">
-            <button> Login </button>
-            <button> Voltar para tela de login </button>
+            <button> {lastUser}</button>
+            <button onClick={navigateToRegister}>
+              {" "}
+              Voltar para tela de login{" "}
+            </button>
           </div>
         </div>
       </header>
     </>
   );
-}
+};
+export default Header;
