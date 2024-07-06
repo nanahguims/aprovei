@@ -19,7 +19,7 @@ const Header = () => {
   }, []);
 
   const navigateToRegister = () => {
-    router.push("/register");
+    router.push("/login");
   };
   return (
     <>
@@ -30,7 +30,7 @@ const Header = () => {
           </div>
 
           <div className="header-menu">
-            <button> {lastUser}</button>
+            {!lastUser ? <p>Usuário não logado</p> : <p>Olá, {lastUser}</p>}
             <button onClick={navigateToRegister}>
               {" "}
               Voltar para tela de login{" "}

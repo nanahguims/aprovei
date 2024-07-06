@@ -1,45 +1,45 @@
+"use client";
+
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-interface User {
-  username: string;
-  password: string;
-}
-
-const Register = () => {
+const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
 
-  const handleRegister = () => {
-    if (password !== confirmPassword) {
-      setError("Senha incorreta");
-      return;
-    }
-
-    const newUser: User = { username, password };
+  const handleLogin = () => {
     const storedUsers = localStorage.getItem("users");
-    const users: User[] = storedUsers ? JSON.parse(storedUsers) : [];
+    if (storedUsers) {
+      const users = JSON.parse(storedUsers);
+      const foundUser = users.find(
+        (user: any) => user.username === username && user.password === password
+      );
+      if (foundUser) {
+        localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
+        router.push("/");
+      } else {
+        setError(
+          "Usuário não encontrado. Por favor, verifique suas credenciais."
+        );
+      }
+    } else {
+      setError("Não há usuários cadastrados. Por favor, registre-se primeiro.");
+    }
+  };
 
-    users.push(newUser);
-    localStorage.setItem("users", JSON.stringify(users));
-
-    setUsername("");
-    setPassword("");
-    setConfirmPassword("");
-    setError("");
-    router.push("/");
+  const navigateToRegister = () => {
+    router.push("/register");
   };
 
   return (
     <div>
-      <h2>Cadastre-se</h2>
+      <h2>Login</h2>
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          handleRegister();
+          handleLogin();
         }}
       >
         <div>
@@ -64,22 +64,15 @@ const Register = () => {
             />
           </label>
         </div>
-        <div>
-          <label>
-            Confirm Password:
-            <input
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
-          </label>
-        </div>
         {error && <p style={{ color: "red" }}>{error}</p>}
-        <button type="submit">Register</button>
+        <button type="submit">Login</button>
       </form>
+      <p>
+        Você não possui conta?{" "}
+        <button onClick={navigateToRegister}>Cadastrar</button>
+      </p>
     </div>
   );
 };
 
-export default Register;
+export default Login;
