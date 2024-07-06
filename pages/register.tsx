@@ -25,6 +25,7 @@ const Register = () => {
 
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("loggedInUser", JSON.stringify(users));
 
     setUsername("");
     setPassword("");
