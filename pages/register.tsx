@@ -25,7 +25,8 @@ const Register = () => {
 
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
-    localStorage.setItem("loggedInUser", JSON.stringify(users));
+
+    localStorage.setItem("loggedInUser", JSON.stringify(newUser));
 
     setUsername("");
     setPassword("");
@@ -67,7 +68,7 @@ const Register = () => {
         </div>
         <div>
           <label>
-            Confirm Password:
+            Confirme sua senha:
             <input
               type="password"
               value={confirmPassword}
@@ -77,7 +78,7 @@ const Register = () => {
           </label>
         </div>
         {error && <p style={{ color: "red" }}>{error}</p>}
-        <button type="submit">Register</button>
+        <button type="submit">Cadastrar</button>
       </form>
     </div>
   );

@@ -1,0 +1,17 @@
+.login {
+  height: 100%;
+  margin: 0;
+
+  &-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include breakpoint($tablet-lg, max) {
+      flex-direction: column;
+    }
+  }
+}

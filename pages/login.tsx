@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/router";
+import "./style.scss";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -34,43 +35,50 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleLogin();
-        }}
-      >
-        <div>
-          <label>
-            Usuário:
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-          </label>
+    <div className="login">
+      <div className="login-container">
+        <div className="form-image">
+          <img src="./img/login-register.png" alt="" />
         </div>
-        <div>
-          <label>
-            Senha:
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </label>
+        <div className="form-container">
+          <h2>Login</h2>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleLogin();
+            }}
+          >
+            <div>
+              <label>
+                Usuário:
+                <input
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                Senha:
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
+            {error && <p style={{ color: "red" }}>{error}</p>}
+            <button type="submit">Login</button>
+          </form>
+          <p>
+            Você não possui conta?{" "}
+            <button onClick={navigateToRegister}>Cadastrar</button>
+          </p>
         </div>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        <button type="submit">Login</button>
-      </form>
-      <p>
-        Você não possui conta?{" "}
-        <button onClick={navigateToRegister}>Cadastrar</button>
-      </p>
+      </div>
     </div>
   );
 };
