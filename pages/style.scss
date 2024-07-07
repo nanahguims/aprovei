@@ -1,17 +1,74 @@
-.login {
+.login,
+.register {
   height: 100%;
   margin: 0;
 
   &-container {
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexLayout($flex-direction: column, $justify-content: center);
     top: 50%;
     left: 50%;
+    @include sizeConfig(100%, 100%);
+    background: $primary-color;
     transform: translate(-50%, -50%);
+    @include textConfig();
+
+    p {
+      margin-top: 10px;
+      button {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+.h3-title {
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+.form {
+  &-container {
+    max-width: 450px;
+    width: 100%;
     @include breakpoint($tablet-lg, max) {
+      padding: 0 20px;
+    }
+    form {
+      gap: $gap;
+      display: flex;
       flex-direction: column;
+      &-image {
+        max-width: 300px;
+
+        img {
+          max-width: 100%;
+        }
+      }
+      label {
+        @include textConfig();
+        display: flex;
+        width: 100%;
+        border-bottom: 1px solid $secondary-color;
+
+        @include breakpoint($tablet-lg, max) {
+          @include flexLayout(
+            $flex-direction: column,
+            $align-items: flex-start
+          );
+        }
+
+        input {
+          padding-left: 10px;
+          background: transparent;
+          outline: none;
+          border: none;
+        }
+      }
+
+      .form-button {
+        @include primaryButton($max-width: 100%);
+      }
     }
   }
 }

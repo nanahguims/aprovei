@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import "./style.scss";
+import "../src/styles/globals.scss";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -41,7 +42,7 @@ const Login = () => {
           <img src="./img/login-register.png" alt="" />
         </div>
         <div className="form-container">
-          <h2>Login</h2>
+          <h3 className="h3-title">Faça seu login</h3>
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -71,7 +72,9 @@ const Login = () => {
               </label>
             </div>
             {error && <p style={{ color: "red" }}>{error}</p>}
-            <button type="submit">Login</button>
+            <button className="form-button" type="submit">
+              Login
+            </button>
           </form>
           <p>
             Você não possui conta?{" "}

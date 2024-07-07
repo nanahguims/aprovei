@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+import "./style.scss";
+import "../src/styles/globals.scss";
 
 interface User {
   username: string;
@@ -36,50 +38,59 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <h2>Cadastre-se</h2>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleRegister();
-        }}
-      >
-        <div>
-          <label>
-            Usuário:
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-          </label>
+    <div className="register">
+      <div className="register-container">
+        <div className="form-image">
+          <img src="./img/login-register.png" alt="" />
         </div>
-        <div>
-          <label>
-            Senha:
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </label>
+        <div className="form-container">
+          <h3 className="h3-title">Cadastre-se</h3>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleRegister();
+            }}
+          >
+            <div>
+              <label>
+                Usuário:
+                <input
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                Senha:
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                Confirme sua senha:
+                <input
+                  type="password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
+            {error && <p style={{ color: "red" }}>{error}</p>}
+            <button className="form-button" type="submit">
+              Cadastrar
+            </button>
+          </form>
         </div>
-        <div>
-          <label>
-            Confirme sua senha:
-            <input
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
-          </label>
-        </div>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        <button type="submit">Cadastrar</button>
-      </form>
+      </div>
     </div>
   );
 };

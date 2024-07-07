@@ -71,7 +71,7 @@ $ultrawide: 3440px;
 }
 
 @mixin primaryButton($max-width: 200px) {
-  background: $primary-color;
+  background: $secondary-color;
   @include sizeConfig(100%, 45px);
   border-radius: 30px;
   max-width: $max-width;
