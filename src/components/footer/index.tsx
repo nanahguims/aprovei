@@ -21,7 +21,7 @@ export function Footer() {
             <p className="paragraph-text">
               {" "}
               Layout desenvolvido por Beatriz Arevalo, Fernanda Guimarães,
-              Gabriela Gotz e Manuella Tafernaberri
+              Gabriella Gotz e Manuella Tafernaberri
             </p>
             <img src="" alt="" />
           </div>

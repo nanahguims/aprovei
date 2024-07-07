@@ -23,6 +23,11 @@ const Header = () => {
     router.push("/");
   };
 
+  const sairDoLogin = () => {
+    localStorage.removeItem("loggedInUser");
+    router.push("/login");
+  };
+
   return (
     <>
       <header>
@@ -34,8 +39,17 @@ const Header = () => {
           </div>
 
           <div className="header-menu">
-            {!loginUser ? <p>Usuário não logado</p> : <p>Olá, {loginUser}</p>}
-            <button onClick={navigateToRegister}> Voltar o login </button>
+            {!loginUser ? (
+              <>
+                <p>Usuário não logado</p>
+                <button onClick={navigateToRegister}> Voltar o login </button>
+              </>
+            ) : (
+              <>
+                <p>Olá, {loginUser}</p>
+                <button onClick={sairDoLogin}>Sair</button>
+              </>
+            )}
           </div>
         </div>
       </header>
