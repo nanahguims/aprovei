@@ -37,11 +37,17 @@ const Register = () => {
     router.push("/");
   };
 
+  const goToHome = () => {
+    router.push("/");
+  };
+
   return (
     <div className="register">
       <div className="register-container">
         <div className="form-image">
-          <img src="./img/login-register.png" alt="" />
+          <button onClick={goToHome}>
+            <img src="./img/login-register.png" alt="" />
+          </button>
         </div>
         <div className="form-container">
           <h3 className="h3-title">Cadastre-se</h3>

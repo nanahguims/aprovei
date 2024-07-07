@@ -18,12 +18,19 @@ const Header = () => {
   const navigateToRegister = () => {
     router.push("/login");
   };
+
+  const goToHome = () => {
+    router.push("/");
+  };
+
   return (
     <>
       <header>
         <div className="header-container">
           <div className="header-logo">
-            <img src="./img/logo.png" alt="" />
+            <button onClick={goToHome}>
+              <img src="./img/logo.png" alt="" />
+            </button>
           </div>
 
           <div className="header-menu">

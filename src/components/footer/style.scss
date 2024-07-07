@@ -10,7 +10,12 @@
       flex-direction: column;
     }
     .paragraph-text {
-      @include textConfig($color: $white);
+      @include flexLayout();
+      @include textConfig($color: $white, $text-align: center);
+
+      img {
+        margin-right: 5px;
+      }
     }
   }
   &-links {
