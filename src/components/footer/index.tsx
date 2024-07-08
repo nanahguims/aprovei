@@ -1,5 +1,10 @@
 import React from "react";
 import "./style.scss";
+import Image from "next/image";
+import iconGithub from "/public/icons/github.png"
+import iconInstagram from "/public/icons/instagram.png"
+import iconTwitter from "/public/icons/twitter.png"
+import iconYoutube from "/public/icons/youtube.png"
 
 export function Footer() {
   return (
@@ -8,31 +13,29 @@ export function Footer() {
         <div className="footer-container">
           <div className="footer-links-01">
             <a className="paragraph-text" href="">
-              <img src="./icons/github.png" alt="" />
+              <Image src={iconGithub} alt="" />
               Github
             </a>
             <a className="paragraph-text" href="">
-              <img src="./icons/instagram.png" alt="" />
+              <Image src={iconInstagram} alt="" />
               Instagram
             </a>
           </div>
 
           <div className="footer-credits">
             <p className="paragraph-text">
-              {" "}
               Layout desenvolvido por Beatriz Arevalo, Fernanda Guimarães,
               Gabriella Gotz e Manuella Tafernaberri
             </p>
-            <img src="" alt="" />
           </div>
 
           <div className="footer-links-02">
             <a className="paragraph-text" href="">
-              <img src="./icons/twitter.png" alt="" />
+              <Image src={iconTwitter} alt="" />
               Twitter
             </a>
             <a className="paragraph-text " href="">
-              <img src="./icons/youtube.png" alt="" />
+              <Image src={iconYoutube} alt="" />
               Youtube
             </a>
           </div>

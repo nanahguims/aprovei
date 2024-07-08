@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import "./style.scss";
+import Image from "next/image";
+import Logo from "/public/img/logo.png";
 
 const Header = () => {
   const router = useRouter();
@@ -34,7 +36,7 @@ const Header = () => {
         <div className="header-container">
           <div className="header-logo">
             <button onClick={goToHome}>
-              <img src="./img/logo.png" alt="" />
+              <Image src={Logo} alt="" />
             </button>
           </div>
 
