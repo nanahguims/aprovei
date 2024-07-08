@@ -5,23 +5,9 @@ const accordionLinguagens = [
   {
     title: "PORTUGUÊS",
     submenus: [
-      { title: "Interpretação", content: "Interpretação de texto- verbal e não verbal" },
-      { title: "Interpretação", content: "Interpretação de texto- verbal e não verbal" },
-      { title: "Interpretação", content: "Interpretação de texto- verbal e não verbal" },
-      { title: "Interpretação", content: "Interpretação de texto- verbal e não verbal" },
-      { title: "Interpretação", content: "Interpretação de texto- verbal e não verbal" },
-    ],
-  },
-  {
-    title: "INGLÊS",
-    submenus: [
-      { title: "Interpretação", content: "Interpretação de texto- verbal e não verbal" },
-    ],
-  },
-  {
-    title: "ESPANHOL",
-    submenus: [
-      { title: "Interpretação", content: "Interpretação de texto- verbal e não verbal" },
+      { content: "Interpretação de texto- verbal e não verbal" },
+      { content: "Interpretação de texto- verbal e não verbal" },
+      { content: "Interpretação de texto- verbal e não verbal" },
     ],
   },
 ];
