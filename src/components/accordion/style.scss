@@ -13,13 +13,21 @@
     &-title {
       padding: 10px 0;
       cursor: pointer;
-      border-bottom: 1px solid $gray;
+      border-bottom: 1px solid $black;
       @include flexLayout($justify-content: space-between);
-      @include titleConfig($font-size: 20px, $text-align: left);
+      @include titleConfig($font-size: 20px, $text-align: left, $color: $secondary-color);
       user-select: none;
     }
-  
-    &-content {
-      padding-top: 10px;
-    }
   }
+
+.submenu {
+  &-item {
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid $secondary-color;
+  }
+}
+
+.video {
+  margin-top: 20px;
+}
