@@ -3,8 +3,26 @@ import Accordion from "@/components/accordion";
 
 const accordionLinguagens = [
   {
-    title: "Linguagens",
-    content:"teste ",
+    title: "PORTUGUÊS",
+    submenus: [
+      { title: "Interpretação", content: "Interpretação de texto- verbal e não verbal" },
+      { title: "Interpretação", content: "Interpretação de texto- verbal e não verbal" },
+      { title: "Interpretação", content: "Interpretação de texto- verbal e não verbal" },
+      { title: "Interpretação", content: "Interpretação de texto- verbal e não verbal" },
+      { title: "Interpretação", content: "Interpretação de texto- verbal e não verbal" },
+    ],
+  },
+  {
+    title: "INGLÊS",
+    submenus: [
+      { title: "Interpretação", content: "Interpretação de texto- verbal e não verbal" },
+    ],
+  },
+  {
+    title: "ESPANHOL",
+    submenus: [
+      { title: "Interpretação", content: "Interpretação de texto- verbal e não verbal" },
+    ],
   },
 ];
 
