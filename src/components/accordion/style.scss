@@ -1,24 +1,28 @@
 .accordion {
-    &-container {
-      padding: 20px 0;
-      @include containerConfig($max-width: $tablet-md);
-      border-bottom: 0;
-    }
-  
-    &-item {
-      width: 100%;
-      padding: 10px;
-    }
-  
-    &-title {
-      padding: 10px 0;
-      cursor: pointer;
-      border-bottom: 1px solid $black;
-      @include flexLayout($justify-content: space-between);
-      @include titleConfig($font-size: 20px, $text-align: left, $color: $secondary-color);
-      user-select: none;
-    }
+  &-container {
+    padding: 20px 0;
+    @include containerConfig($max-width: $tablet-md);
+    border-bottom: 0;
   }
+
+  &-item {
+    width: 100%;
+    padding: 10px;
+  }
+
+  &-title {
+    padding: 10px 0;
+    cursor: pointer;
+    border-bottom: 1px solid $black;
+    @include flexLayout($justify-content: space-between);
+    @include titleConfig(
+      $font-size: 20px,
+      $text-align: left,
+      $color: $secondary-color
+    );
+    user-select: none;
+  }
+}
 
 .submenu {
   &-item {
@@ -31,3 +35,14 @@
 .video {
   margin-top: 20px;
 }
+
+main {
+  min-height: calc(100vh - 243px);
+}
+
+// .footer-container {
+//   @include breakpoint($mobile-sm, min) {
+//     position: fixed;
+//     bottom: 0;
+//   }
+// }

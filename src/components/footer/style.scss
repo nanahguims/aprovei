@@ -10,7 +10,7 @@ footer {
     padding: $padding;
     gap: $gap;
 
-    @include breakpoint($tablet-lg, max) {
+    @include breakpoint($laptop-md, max) {
       flex-direction: column;
     }
     .paragraph-text {

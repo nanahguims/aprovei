@@ -2,9 +2,9 @@
 
 import React from "react";
 import Accordion from "@/components/accordion";
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 
-const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
+// const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
 
 const accordionLinguagens = [
   {
@@ -40,7 +40,6 @@ const accordionLinguagens = [
 ];
 
 export function LinguagensConteudo() {
-
   return (
     <div className="linguagens">
       <h3 className="h3-title">Linguagens</h3>
@@ -49,10 +48,10 @@ export function LinguagensConteudo() {
         <Accordion items={accordionLinguagens} />
       </div>
       <div>
-        <h4 className="h4-title">Dicas</h4>
+        {/* <h4 className="h4-title">Dicas</h4> */}
         <div className="video">
           <center>
-            <ReactPlayer url={'https://www.youtube.com/watch?v=TuBKsV3lSQc'} />
+            {/* <ReactPlayer url={'https://www.youtube.com/watch?v=TuBKsV3lSQc'} /> */}
           </center>
         </div>
       </div>
