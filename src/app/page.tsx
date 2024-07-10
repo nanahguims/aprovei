@@ -51,22 +51,22 @@ export default function Home() {
               </button>
             </div>
             <div className="home-conteudo-item">
-              <a href="">
+             <button onClick={goLinguagens}>
                 <img src="./img/humanas.jpg" alt="" />
                 <h4 className="h4-title">Ciências Humanas</h4>
-              </a>
+             </button>
             </div>
             <div className="home-conteudo-item">
-              <a href="">
+              <button onClick={goLinguagens}>
                 <img src="./img/exatas.jpg" alt="" />
                 <h4 className="h4-title ">Ciências Exatas</h4>
-              </a>
+              </button>
             </div>
             <div className="home-conteudo-item">
-              <a href="">
+              <button onClick={goLinguagens}>
                 <img src="./img/biologicas.jpg" alt="" />
                 <h4 className="h4-title"> Ciências Biológicas</h4>
-              </a>
+              </button>
             </div>
             
           </div>
